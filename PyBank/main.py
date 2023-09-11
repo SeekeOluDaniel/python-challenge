@@ -1,13 +1,17 @@
 import os
 import csv
 
-budget_path= "Resources\\budget_data.csv"
+# Specify file path
+budget_path = "Resources\\budget_data.csv"
 
+# Open file to read
 with open(budget_path, "r") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
 
+# Skip Header Row
     csvheader = next(csvreader)
 
+# Define variables to be iterated over
     rowcount = 0
 
     sum_total = 0
@@ -29,6 +33,7 @@ with open(budget_path, "r") as csvfile:
 
         sum_total = int(sum_total) + int(r[1])
 
+# Since month 1 in the data Jan-10 does not have a previous row, there is no change to be calculated.
         if previous_row != None:
             
             this_month_value = int(r[1])
@@ -47,6 +52,8 @@ with open(budget_path, "r") as csvfile:
                 greatest_decrease_month = r[0]
 
         previous_row = r
+
+# The average change is based on 85 months since change can only be calculated for months 2 to 86
 
         avg_change = round(total_change / 85, 2)
        
