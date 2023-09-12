@@ -11,6 +11,7 @@ For the PyBank Challenge, here are my steps:
 #8  Calculate average change which is total change divided by 85 months
 #9  Iterate through each row to calculate greatest increase and greatest decrease in profits. Reset previous row to be the new starting point
 #10 Display all the calculated results
+#11 Create a text file called budget_analysis and wrote the printed results from the terminal to the text file
 
 
 For the PyPoll Challenge, these were my steps:
@@ -46,3 +47,6 @@ winning_count = 0
     I adapted these lines to suit my code, so the variables are mine: 
     vote_results = f"{candidate}: {round(percentage_won, 3)}% ({votes})\n"
         print(vote_results)
+    
+#8 Display all the calculated results
+#9 Create a text file called election_results and wrote the printed results from the terminal to the text file

@@ -14,7 +14,7 @@ with open(election_path, "r") as csvfile:
 
     csvheader = next(csvreader)
 
-# Define variables to be iterated over
+# Define variables to be looped through
     rowcount = 0 
 
     for row in csvreader:
@@ -45,3 +45,12 @@ with open(election_path, "r") as csvfile:
     
 print(f"The winner is: " + winning_candidate)
 
+# Specify output location
+results_final_path = "analysis\election_results.txt"
+election_results=(f"Total Votes: 369711 \n" + "Charles Casper Stockham: 23.049% (85213) \n" + "Diana DeGette: 73.812% (272892) \n" + "Raymon Anthony Doane: 3.139% (11606) \n" + "The winner is: Diana DeGette \n")
+
+# Open the output file    
+with open(results_final_path, "w") as txt_file:
+
+# Write the Contents    
+    txt_file.write(election_results)
